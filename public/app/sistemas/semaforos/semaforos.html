@@ -1,0 +1,33 @@
+<div flex layout="column" style="background-color: white">
+    <div layout-padding>
+        <div layout="row" layout-align="right center">
+            <md-button class="md-icon-button"
+                       ng-click="empleadosCtrl.regresarAEmpresas()">
+                <i class="material-icons"><i class="material-icons">arrow_back</i></i>
+            </md-button>
+            <h3> Empleados </h3></div>
+    </div>
+    <md-content>
+        <md-list flex>
+            <md-list-item class="md-3-line noright" ng-repeat="empleado in empleadosCtrl.empleados">
+                <div class="md-list-item-text" layout="column">
+                    <h3>@{{ empleado.nombre }}</h3>
+                    <p>@{{ empleado.correo }}</p>
+                </div>
+                <md-button class="md-secondary md-icon-button"
+                          >
+                    <i class="material-icons">delete</i>
+                </md-button>
+            </md-list-item>
+        </md-list>
+        <br/><br/><br/>
+    </md-content>
+</div>
+<md-button ng-show="!empleadosCtrl.selected" id="add" class="md-fab md-fab-bottom-right" aria-label="Add"
+           ng-click="empleadosCtrl.crearNuevoEmpleado()">
+    <md-icon><i class="material-icons">add</i></md-icon>
+</md-button>
+<md-button ng-show="empleadosCtrl.selected" id="add" class="md-fab md-fab-bottom-right" aria-label="Add"
+           ng-click="empleadosCtrl.editarEmpleado(empleadosCtrl.selected.id)">
+    <md-icon><i class="material-icons">edit</i></md-icon>
+</md-button>

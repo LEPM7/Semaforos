@@ -1,0 +1,26 @@
+<div flex layout="column" style="background-color: white">
+    <div layout-padding>
+        <div layout="row" layout-align="right center">
+            <md-button class="md-icon-button">
+                <i class="material-icons"><i class="material-icons">arrow_back</i></i>
+            </md-button>
+            <h3> Calles </h3></div>
+    </div>
+    <md-content>
+        <md-list flex>
+            <md-list-item class="md-3-line noright" ng-repeat="calle in callesCtrl.calles" ng-click="callesCtrl.editarCalle(calle._id)">
+                <div class="md-list-item-text" layout="column">
+                    <h3>{{ calle.nombre }}</h3>
+                    <p>{{ calle.ubicacion }}</p>
+                </div>
+                <md-button class="md-secondary md-icon-button">
+                    <i class="material-icons">delete</i>
+                </md-button>
+            </md-list-item>
+        </md-list>
+        <br/><br/><br/>
+    </md-content>
+</div>
+<md-button id="add" class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="callesCtrl.crearCalle()">
+    <md-icon><i class="material-icons">add</i></md-icon>
+</md-button>

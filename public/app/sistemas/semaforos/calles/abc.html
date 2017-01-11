@@ -1,0 +1,53 @@
+<md-dialog aria-label="Calle" flex flex-gt-md="40">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>
+                <span>Calle</span>
+            </h2>
+            <span flex></span>
+        </div>
+    </md-toolbar>
+    <div flex layout="row">
+        <md-content layout="column" md-whiteframe="1" flex layout-padding>
+            <form role="form" ng-submit="dialogCtrl.crearCalle(dialogCtrl.calle)" novalidate>
+                <div ng-class="{'form-group': true, 'has-error': dialogCtrl.errors.nombre}">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Nombre</label>
+
+                        <input name="nombre"
+                               ng-model="dialogCtrl.calle.nombre">
+
+                        <span class="help-block" ng-show="dialogCtrl.errors.nombre">
+                            <strong ng-repeat="error in dialogCtrl.errors.nombre">@{{ error }} <br/>
+                            </strong>
+                        </span>
+
+                    </md-input-container>
+                </div>
+                <div ng-class="{'form-group': true, 'has-error': dialogCtrl.errors.ubicacion}">
+                    <md-input-container class="md-block" flex-gt-sm>
+                        <label>Ubicacion</label>
+
+                        <input name="ubicacion"
+                               ng-model="dialogCtrl.calle.ubicacion">
+
+                        <span class="help-block" ng-show="dialogCtrl.errors.ubicacion">
+                            <strong ng-repeat="error in dialogCtrl.errors.ubicacion">@{{ error }} <br/>
+                            </strong>
+                        </span>
+
+                    </md-input-container>
+                </div>
+            </form>
+        </md-content>
+    </div>
+    <md-dialog-actions layout="row">
+        <span flex></span>
+        <md-button class="md-primary" ng-click="dialogCtrl.guardar(dialogCtrl.calle)">
+            Guardar
+        </md-button>
+        <md-button ng-click="dialogCtrl.cancel()" style="margin-right:20px;">
+            Cancelar
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

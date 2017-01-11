@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        .loginBox {
+            max-width:  90%;
+            width: 500px
+        }
+
+        .stretch input  {
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+<!--
+  Your HTML content here
+-->
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script type='text/javascript' src="app.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/comun/modelos/calle.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/comun/modelos/semaforo.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/comun/modelos.usuario.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/sistemas/semaforos/semaforos.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/sistemas/semaforos/calles/calles.js" charset="UTF-8"></script>
+<script type='text/javascript' src="app/usuarios/usuarios.js" charset="UTF-8"></script>
+
+<!-- Your application bootstrap  -->
+<div class="container" ui-view="contenido"></div>
+</body>
+</html>
