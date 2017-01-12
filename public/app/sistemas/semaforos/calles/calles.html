@@ -13,8 +13,8 @@
                     <h3>{{ calle.nombre }}</h3>
                     <p>{{ calle.ubicacion }}</p>
                 </div>
-                <md-button class="md-secondary md-icon-button">
-                    <i class="material-icons">delete</i>
+                <md-button class="md-secondary md-icon-button" ng-click="callesCtrl.irCalle(calle._id)">
+                    <i class="material-icons">search</i>
                 </md-button>
             </md-list-item>
         </md-list>

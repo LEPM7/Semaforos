@@ -12,8 +12,8 @@ angular.module('modelos.semaforo', [])
                 else
                     return $http.get('/semaforos/' + id);
             },
-            create: function (calle) {
-                return $http.post('/semaforos', calle);
+            create: function (semaforo) {
+                return $http.post('/semaforos', semaforo);
             },
             delete: function (id) {
                 return $http.delete('/semaforos/' + id);

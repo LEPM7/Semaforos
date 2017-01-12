@@ -3,7 +3,8 @@
  */
 angular.module('calles', [
     'ui.router',
-    'modelos.calle'
+    'modelos.calle',
+    'calles.cantidad'
 ])
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider
@@ -51,6 +52,10 @@ angular.module('calles', [
 
         callesCtrl.editarCalle = function(calle_id) {
             showDialog(calle_id);
+        };
+
+        callesCtrl.irCalle = function (calle_id) {
+            $state.go('app.calles.cantidad', {id: calle_id});
         };
 
         cargarCalles();
